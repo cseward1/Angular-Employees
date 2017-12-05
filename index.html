@@ -3,7 +3,10 @@
 <!-- DONE: Ensure that employees are ordered by start date, ascending. Sorting?-->
 <!-- DONE: Put a button next to each employee labeled Fire Employee. -->
 <!-- IN PROCESS: When that button is clicked, change the value of the employmentEnd property of that employee to Date.now(). -->
-<!--DONE: Ensure that only current employees are displayed in the DOM. -->
+<!-- DONE: Ensure that only current employees are displayed in the DOM. -->
+<!-- DONE:Now, put a form in the section that contains two text inputs - one for first name, and one for last name -->
+<!-- DONE: add a button to the from   -->
+<!-- When the form submits, it should add a new employee object to the $scope.employees array. --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +26,7 @@
             <div>
 
                 <!-- create a for/each loop & filter the names by date joined with the filter or "orderBy" attribute of the repeat directive-->
+                <h1>Current Employees:</h1>
                 <ul ng-repeat="employee in employees | orderBy:'-employmentStart':true">
                     <li ng-if="employees.employmentEnd === null"></li>
                     <!-- List the employees first and last name on the DOM -->
@@ -30,11 +34,22 @@
                     <button ng-click="fireEmployee(employee)">Fire!</button>
                     {{ employee.name }}
                     </li>
-            </div>
-            </ul>
+                </ul>
+           
+            
     </div>
+    <!-- create a form for "New Hires" and a Button to submit the information and display it on the DOM -->
+    <h2>Have a New employee to Add?</h2>
+    <form ng-submit="hireEmployee(employee)">
+        First name: <input type="text" ng-model="newEmployee">
+        Last name: <input type="text" ng-model="newEmployee">
+        <button>Hire employee</button>
+        {{ newEmployee }}
+    </form>
+        
     <!-- Controller section ends -->
     </section>
+
     </div>
 
     <!-- Script files begin -->
@@ -42,5 +57,4 @@
     <script src="/app/EmployeeCtrl.js"></script>
 
 </body>
-
 </html>

@@ -41,14 +41,23 @@ $scope.employees = [
 
 // create a delete button that "fires employees"
 $scope.fireEmployee = function(employee) {
-    console.log("click is fired")
+    console.log("employee termination click is fired")
     var employeeIndex = $scope.employees.indexOf(employee);
       // On click, the "employementEnd" becomes the current date
     employee.employmentEnd = Date.now();
-
+// if statement
     if (employeeIndex >= 0) {
       $scope.employees.splice(employeeIndex, 1)
     }
   };
 
+//   gather the form information - first name + last name
+    $scope.newEmployee
+    //   create button that fires when you "hire" and a new employee
+  $scope.hireEmployee = function(employee) {
+    console.log("hiring click is fired")
+   
+  };
+
 })
+
