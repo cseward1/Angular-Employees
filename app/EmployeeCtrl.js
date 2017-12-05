@@ -2,8 +2,8 @@
 // the array in the module call is empty until we have to pass in dependencies
 var app = angular.module("EmployeeMgmt", []);
 
-// 2. Initiate the controller and make sure that it is called in the HTML as well
-// create a controller for displaying, creating, and deleting Employees
+// 2. Initiate the controller and make sure that it is called in the HTML 
+// creating a controller for displaying, creating, and deleting Employees
 app.controller("EmployeeCtrl", function ($scope) {
 
 $scope.employees = [
@@ -41,10 +41,9 @@ $scope.employees = [
 
 // create a delete button that "fires employees"
 $scope.fireEmployee = function(employee) {
-    // Do you see the PFM here of full object comparison?
     console.log("click is fired")
     var employeeIndex = $scope.employees.indexOf(employee);
-      //On click, the "employementEnd" becomes the current date
+      // On click, the "employementEnd" becomes the current date
     employee.employmentEnd = Date.now();
 
     if (employeeIndex >= 0) {
