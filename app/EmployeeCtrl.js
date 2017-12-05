@@ -39,7 +39,7 @@ $scope.employees = [
     }
 ]
 
-// create a delete button that "fires employees"
+// create a delete button that "fires employees":
 $scope.fireEmployee = function(employee) {
     console.log("employee termination click is fired")
     var employeeIndex = $scope.employees.indexOf(employee);
@@ -51,12 +51,13 @@ $scope.fireEmployee = function(employee) {
     }
   };
 
-//   gather the form information - first name + last name
-    $scope.newEmployee
-    //   create button that fires when you "hire" and a new employee
-  $scope.hireEmployee = function(employee) {
+// create a form with a button that hires allows you to hire a new employee:
+      $scope.hireEmployee = function(employee) {
+      //gather the form information - first name + last name
+    $scope.newEmployeesFirstName.newEmployeesLastName
+
     console.log("hiring click is fired")
-   
+ 
   };
 
 })

@@ -6,7 +6,7 @@
 <!-- DONE: Ensure that only current employees are displayed in the DOM. -->
 <!-- DONE:Now, put a form in the section that contains two text inputs - one for first name, and one for last name -->
 <!-- DONE: add a button to the from   -->
-<!-- When the form submits, it should add a new employee object to the $scope.employees array. --> 
+<!-- DONE: When the form submits, it should add a new employee object to the $scope.employees array. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,26 +35,31 @@
                     {{ employee.name }}
                     </li>
                 </ul>
-           
-            
-    </div>
-    <!-- create a form for "New Hires" and a Button to submit the information and display it on the DOM -->
-    <h2>Have a New employee to Add?</h2>
-    <form ng-submit="hireEmployee(employee)">
-        First name: <input type="text" ng-model="newEmployee">
-        Last name: <input type="text" ng-model="newEmployee">
-        <button>Hire employee</button>
-        {{ newEmployee }}
-    </form>
-        
-    <!-- Controller section ends -->
-    </section>
+
+
+            </div>
+            <!-- create a form for "New Hires" and a Button to submit the information and display it on the DOM: -->
+            <!-- button can sit inside the form in Angular: -->
+            <h2>Have a New employee to Add?</h2>
+            <form ng-submit="hireEmployee(employee)">
+                First name:
+                <input type="text" ng-model="newEmployeesFirstName"> Last name:
+                <input type="text" ng-model="newEmployeesLastName">
+                <button>Hire employee</button>
+                {{ newEmployeesFirstName }} {{newEmployeesLastName}}
+            </form>
+
+            <!-- Controller section ends: -->
+        </section>
 
     </div>
 
-    <!-- Script files begin -->
+    <!-- firebase will permanetly change the variable  - need database to make and store changes-->
+
+    <!-- Script files begin: -->
     <script src="lib/node_modules/angular/angular.min.js"></script>
     <script src="/app/EmployeeCtrl.js"></script>
 
 </body>
+
 </html>
